@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Papel o Tijera - Autómata</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Autómata de Piedra, Papel o Tijera</h1>
+    <button onclick="seleccionar('piedra')">Piedra</button>
+    <button onclick="seleccionar('papel')">Papel</button>
+    <button onclick="seleccionar('tijera')">Tijera</button>
+    
+    <div class="seleccion" id="seleccion-jugador">
+        <i class="fas fa-user"></i>
+        <span id="jugador-eleccion"></span>
+    </div>
+    <div class="seleccion" id="seleccion-maquina">
+        <i class="fas fa-robot"></i>
+        <span id="maquina-eleccion"></span>
+    </div>
+
+    <div class="container">
+        <!-- Estados -->
+        <div id="e_jugador" class="estado" style="top: 50%; left: 5%;">Jugador</div>
+        <div id="e_piedra" class="estado" style="top: 30%; left: 25%;">
+            <i class="fas fa-hand-rock"></i> Piedra
+        </div>
+        <div id="e_papel" class="estado" style="top: 50%; left: 25%;">
+            <i class="fas fa-hand-paper"></i> Papel
+        </div>
+        <div id="e_tijera" class="estado" style="top: 70%; left: 25%;">
+            <i class="fas fa-hand-scissors"></i> Tijera
+        </div>
+        <div id="e_empate" class="estado" style="top: 20%; left: 70%;">Empate</div>
+        <div id="e_gana_jugador" class="estado" style="top: 50%; left: 70%;">Gana Jugador</div>
+        <div id="e_gana_maquina" class="estado" style="top: 80%; left: 70%;">Gana Máquina</div>
+
+        <!-- Flechas -->
+        <div class="linea flecha" style="top: 37%; left: 18%; width: 70px;"></div> <!-- Jugador -> Piedra -->
+        <div class="linea flecha" style="top: 57%; left: 18%; width: 70px;"></div> <!-- Jugador -> Papel -->
+        <div class="linea flecha" style="top: 77%; left: 18%; width: 70px;"></div> <!-- Jugador -> Tijera -->
+        <div class="linea flecha" style="top: 27%; left: 55%; width: 70px;"></div> <!-- Piedra -> Empate -->
+        <div class="linea flecha" style="top: 47%; left: 55%; width: 70px;"></div> <!-- Papel -> Gana Jugador -->
+        <div class="linea flecha" style="top: 77%; left: 55%; width: 70px;"></div> <!-- Tijera -> Gana Máquina -->
+    </div>
+    
+    <p id="resultado"></p>
+    
+    <!-- Incluir la librería canvas-confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
